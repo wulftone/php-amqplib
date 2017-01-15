@@ -58,6 +58,10 @@ class AMQPReader extends AbstractClient
     {
         parent::__construct();
 
+        if (is_null($str)) {
+            $str = '';
+        }
+
         $this->str = $str;
         $this->str_length = mb_strlen($this->str, 'ASCII');
         $this->io = $io;
